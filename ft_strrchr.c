@@ -1,40 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 21:10:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/05 11:42:45 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/04 19:00:33 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/06 16:37:39 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	char	*ss;
+	int j;
+	int i;
 
+	j = ft_strlen(s);
 	i = 0;
-	ss = (char*) s;
-	while (ss[i] != c && ss[i])
+	while (s[i])
+	{
 		i++;
-	if (ss[i] ==  c)
-		return (&ss[i]);
-	else 
-		return (NULL);
+		j++;
+	}
+	while (s[i])
+	{
+		if (s[j] != c)
+		{
+			return (NULL);
+		else
+			return (&s[j]);
+		}
+		j--;
+		i--;
+	}
 }
-/*
+
 #include <stdio.h>
 int main()
 {
-    char go[] = "amzmil";
-    int c = 'm';
-	printf("%s\n",ft_strchr(go,c));
-    printf("%s",strchr(go,c));
+    char go[] = "mohammed";
+    char c = 'm';
+    printf("%s\n",strrchr(go,c));
+    printf("%s",ft_strrchr(go,c));
 }
-*/
 

@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 21:10:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/05 11:42:45 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/05 10:19:43 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/06 14:23:07 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 {
-	int	i;
-	char	*ss;
+	size_t	lensrc;
+	size_t	i;
 
 	i = 0;
-	ss = (char*) s;
-	while (ss[i] != c && ss[i])
+	lensrc = ft_strlen(src);
+	while (src[i] && size)
+	{
+		dst[i] = src[i];
 		i++;
-	if (ss[i] ==  c)
-		return (&ss[i]);
-	else 
-		return (NULL);
+	}
+	return (lensrc + size);
 }
 /*
 #include <stdio.h>
 int main()
 {
-    char go[] = "amzmil";
-    int c = 'm';
-	printf("%s\n",ft_strchr(go,c));
-    printf("%s",strchr(go,c));
+	char go[]="yahya";
+	char gi[]="amz";
+	printf("%zu\n",ft_strlcat(go,gi,2));
+	printf("%zu",strlcat(go,gi,2));
 }
 */
-

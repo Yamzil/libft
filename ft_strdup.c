@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 21:10:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/05 11:42:45 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/05 17:16:55 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/06 16:59:50 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
-	char	*ss;
+	size_t	i;
+	size_t	j;
+	char	*temp;
 
 	i = 0;
-	ss = (char*) s;
-	while (ss[i] != c && ss[i])
+	j = ft_strlen(s1);
+	temp = (char *) malloc(j * sizeof (char));
+	while (s1[i])
+	{
+		temp[i] = s1[i];
 		i++;
-	if (ss[i] ==  c)
-		return (&ss[i]);
-	else 
-		return (NULL);
+	}
+	temp [i] = '\0';
+	return (temp);
 }
 /*
 #include <stdio.h>
 int main()
 {
-    char go[] = "amzmil";
-    int c = 'm';
-	printf("%s\n",ft_strchr(go,c));
-    printf("%s",strchr(go,c));
+	char go[]="yahya";
+	printf("%s\n",ft_strdup(go));
+	printf("%s",strdup(go));
 }
 */
-

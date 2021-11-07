@@ -6,20 +6,21 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:54:51 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/03 17:01:16 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/06 13:16:10 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
+#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*a;
+	unsigned char	*a;
 
 	a = (unsigned char *) b;
 	while (len)
 	{
-		*a = c;
+		*a = (unsigned char) c;
 		a++;
 		len--;
 	}
@@ -29,9 +30,9 @@ void	*ft_memset(void *b, int c, size_t len)
 #include<stdio.h>
 int main()
 {
-	char str[20] = "Yahya";
-	int i = 'k';
-	printf("%s\n",ft_memset(str,i,2));
-	printf("%s",memset(str,i,2));
+	char str[20] = "amzil";
+	int i = 'y';
+	printf("%s\n",ft_memset(str,i,1));
+	printf("%s",memset(str,i,1));
 }
 */

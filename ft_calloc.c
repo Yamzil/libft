@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 21:10:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/05 11:42:45 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/06 10:52:03 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/06 10:52:07 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+void *ft_calloc(size_t count, size_t size)
 {
-	int	i;
-	char	*ss;
+    char *temp
+    size_t i;
 
-	i = 0;
-	ss = (char*) s;
-	while (ss[i] != c && ss[i])
-		i++;
-	if (ss[i] ==  c)
-		return (&ss[i]);
-	else 
-		return (NULL);
+    temp = malloc(sizeof(char));
+    i = 0;
+    while (temp[i])
+    {
+        if (temp[0] != '\0')
+        {
+            ft_bzero(temp,count * size);
+        }
+        else
+            return (0);
+    i++;
+    }
 }
 /*
 #include <stdio.h>
 int main()
 {
-    char go[] = "amzmil";
-    int c = 'm';
-	printf("%s\n",ft_strchr(go,c));
-    printf("%s",strchr(go,c));
+    int i;
+    i = 6
+    char * pointer = (char *) calloc( go, sizeof(char));
+    printf("%s",ft_calloc(6))
 }
 */
-
