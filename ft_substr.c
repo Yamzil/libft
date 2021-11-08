@@ -9,7 +9,7 @@
 /*   Updated: 2021/11/06 21:29:22 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stddef.h>
 #include <string.h>
 #include "libft.h"
@@ -37,3 +37,4 @@ int main()
 	char go[] ="amzil";
 	printf("%s",ft_substr(go,'a',3));
 }
+*/

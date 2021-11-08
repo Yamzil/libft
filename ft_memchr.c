@@ -15,27 +15,26 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char		*ss;
+	char		*ss;
+	//unsigned char		cc;
 	size_t				i;
 
-	ss = (unsigned char *) s;
+	ss = (char *) s;
 	i = 0;
-	if (!n || !ss)
-		return (0);
 	while (i < n)
 	{
 		if (ss[i] == c)
 			return (&ss[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 /*
 #include<stdio.h>
 int main()
 {
 	char go[]="yhaya";
-	int g='h';
-	printf("%s",ft_memchr(go,g,3));
+	int g='w';
+	printf("%s",ft_memchr(go,g,1));
 }
 */

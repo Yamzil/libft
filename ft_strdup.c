@@ -21,13 +21,16 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	j = ft_strlen(s1);
-	temp = (char *) malloc(j * sizeof (char));
+	temp = malloc((j + 1) * sizeof (char));
+	if (temp == NULL)
+		return (0);
 	while (s1[i])
 	{
 		temp[i] = s1[i];
 		i++;
 	}
 	temp [i] = '\0';
+	//free(temp);
 	return (temp);
 }
 /*

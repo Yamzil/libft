@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 int main()
 {
     char go[] = "amzmil";
-    int c = 'm';
+    int c = 'x';
 	printf("%s\n",ft_strchr(go,c));
     printf("%s",strchr(go,c));
 }

@@ -13,31 +13,24 @@
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char    *ft_strrchr(const char *s, int c)
 {
-	int j;
-	int i;
+    int len;
+    char cc;
+    char    *ss;
 
-	j = ft_strlen(s);
-	i = 0;
-	while (s[i])
-	{
-		i++;
-		j++;
-	}
-	while (s[i])
-	{
-		if (s[j] != c)
-		{
-			return (NULL);
-		else
-			return (&s[j]);
-		}
-		j--;
-		i--;
-	}
+    len = ft_strlen(s) + 1;
+    ss = (char *) s;
+    cc = (char) c;
+    while (len--)
+    {
+    if (ss[len] == cc)
+        return (&ss[len]);
+    }
+    return (NULL);
 }
 
+/*
 #include <stdio.h>
 int main()
 {
@@ -46,4 +39,4 @@ int main()
     printf("%s\n",strrchr(go,c));
     printf("%s",ft_strrchr(go,c));
 }
-
+*/

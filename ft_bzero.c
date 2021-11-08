@@ -26,21 +26,21 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-#include<stdio.h>
-int main()
-{
-	int go[] = {4, 3, 2, 1};
-	int i;
+// #include<stdio.h>
+// int main()
+// {
+// 	int go[] = {4, 3, 2, 1};
+// 	int i;
 
-	i = 0;
-	ft_bzero(go,2);
-	while (go[i] != '\0')
-	{
-		printf("%d, ", go[i]);
-		i++;
-	}
-	printf("%c",go[0]);
-	printf("%c",go[1]);
-	printf("%c",go[3]);
-}
+// 	i = 0;
+// 	ft_bzero(go,2);
+// 	while (go[i] != '\0')
+// 	{
+// 		printf("%d, ", go[i]);
+// 		i++;
+// 	}
+// 	printf("%c",go[0]);
+// 	printf("%c",go[1]);
+// 	printf("%c",go[3]);
+// }
 

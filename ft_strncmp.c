@@ -12,19 +12,29 @@
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+    size_t  i;
+    unsigned char *s11;
+    unsigned char *s22;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && n)
-	{
-		i++;
-		n--;
-	}
-	return (s1[i] - s2[i]);
+
+    i = 0;
+    s11 = (unsigned char *) s1;
+    s22 = (unsigned char *) s2;
+    if (n == 0)
+        return (0);
+    while ((s11[i] != '\0' || s22[i] != '\0') && i < n )
+    {
+        if(s11[i] != s22[i])
+            return (s11[i]  - s22[i]);
+        i++;
+    }
+    return (0);
+    //return ((unsigned char )s1[i] - (unsigned char )s2[i]);
 }
-/*
+
+/*                                                                                                                                                                                                                                                                                                                                    
 int main()
 {
 	char go[] = "abcd";

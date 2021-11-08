@@ -16,25 +16,29 @@
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t		i;
-	const char	*s11;
-	const char	*s22;
+	unsigned char	*s11;
+	unsigned char	*s22;
 
 	i = 0;
-	s11 = (const char *)s1;
-	s22 = (const char *)s2;
-	while (s11[i] && s22[i] && s11[i] == s22[i] && n)
+	s11 = (unsigned char *)s1;
+	s22 = (unsigned char *)s2;
+	if (!n)
+        return (0);
+	while (i < n)
 	{
-		i++;
+		if(s11[i] != s22[i])
+            return (s11[i]  - s22[i]);
+        i++;
 	}
-	return (s11[i] - s22[i]);
+	return (0);
 }
 
-#include<stdio.h>
-int main()
-{
-	char go[]="yahya";
-	char gi[]="amw";
-	printf("%d\n",ft_memcmp(go,gi,0));
-	printf("%d",memcmp(go,gi,0));
-}
+// #include<stdio.h>
+// int main()
+// {
+// 	char go[]="yahya";
+// 	char gi[]="amw";
+// 	printf("%d\n",ft_memcmp(go,gi,0));
+// 	printf("%d",memcmp(go,gi,0));
+// }
 
