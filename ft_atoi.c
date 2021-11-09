@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	long long	base;
+	int	base;
 
 	i = 0;
 	sign = 1;
@@ -26,14 +26,15 @@ int	ft_atoi(const char *str)
 			|| str[i] == '\t' || str[i] == '\v'
 			|| str[i] == '\r' || str[i] == '\f'))
 		i++;
-	while (str[i] && (str[i] == '-' || str[i] == '+'))
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
 		if (str[i] == '-')
 		{
-			sign = sign * -1;
+			sign = -1;
 		}
 		i++;
 	}
+	
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		base = (base * 10) + (str[i] - 48);
@@ -45,7 +46,7 @@ int	ft_atoi(const char *str)
 #include<stdio.h>
 int main()
 {
-    printf("%d\n",ft_atoi("+  1234a  b567"));
-    printf("%d",atoi("+  1234a  b567"));
+    printf("%d\n",ft_atoi("  -1234a  b567"));
+    printf("%d",atoi("  -1234a  b567"));
 }
 */
