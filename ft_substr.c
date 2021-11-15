@@ -9,32 +9,34 @@
 /*   Updated: 2021/11/06 21:29:22 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stddef.h>
-#include <string.h>
-#include "libft.h"
 
+#include "libft.h"
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char const	*temp;
+	size_t	i;
+	char *temp;
 
-	temp = (char *)malloc((len + 1) * sizeof(char));
-	while (*(s + i))
+	i = 0;
+	if(!s)
+		return NULL;
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	temp = malloc ((len + 1) * sizeof(char));
+	if (!temp)
+		return (NULL);
+	while (len > i)
 	{
-		if (len = start)
-		{
-			*temp = *(start + i);
-			i++;
-		}
-		*temp = '\0';
-		return (temp - len);
+		temp[i] = (char)s[i + start];
+		i++;
 	}
+	temp[i] = '\0';
+	return (temp);	
 }
 
-#include<stdio.h>
-int main()
-{
-	char go[] ="amzil";
-	printf("%s",ft_substr(go,'a',3));
-}
-*/
+
+// #include<stdio.h>
+// int main()
+// {
+// 	char go[] ="amzilyahya";
+// 	printf("%s",ft_substr(go,2,4));
+// }

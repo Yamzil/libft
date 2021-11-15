@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 15:23:23 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/04 16:47:14 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/15 17:19:30 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/15 17:19:32 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+char    *ft_itoa(int n)
 {
-	char		*ss;
-	size_t		i;
+    int m;
+    int i;
+    //char go[10]="0123456789";
+    char *temp;
 
-	ss = (char *) s;
-	i = 0;
-	while (i < n)
-	{
-		if (ss[i] == (char) c)
-			return (&ss[i]);
-		i++;
-	}
-	return (NULL);
+    m = n;
+    i  = 0;
+    temp = (char *) malloc(n);
+    if (!temp)
+        return (NULL);
+    if (m < 0)
+    {
+        m *= -1;
+        i++;
+    }
+    else
+        m = m;
+    while (m > 9)
+    {
+        temp[i++] = m % 10 + 48;
+        temp[i++] = m / 10 + 48;
+    }
+    temp[i] = '\0';
+   return(temp);
 }
-/*
+
 #include<stdio.h>
 int main()
 {
-	char go[]="yhaya";
-	int g='w';
-	printf("%s",ft_memchr(go,g,1));
+    printf("%s",ft_itoa(5));
 }
-*/

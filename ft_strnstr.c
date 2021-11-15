@@ -15,35 +15,32 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*hay;
-	char	*need;
+	size_t	a;
+	size_t	b;
 
-	i = 0;
-	hay = (char *) haystack;
-	need = (char *) needle;
-	if (need == NULL && hay == NULL)
-		return(NULL);
-	while (hay[i] && len > i)
+	a = 0;
+	b = 0;
+	if (needle[b] == '\0')
+		return ((char *)haystack);
+	while (haystack[a] != '\0')
 	{
-		j = 0;
-		while (hay[j] == need[j + i] && len < (i + j))
-			if (need[i+j] == '\0')
-				return(&hay[i]);
-			else if (need[i+j] == hay[i])
-				return (&need[i+j]);
-		j++;
-	i++;
+		b = 0;
+		while (haystack[a + b] == needle[b] && a + b < len)
+		{
+			if (needle[b + 1] == '\0')
+				return ((char *)haystack + a);
+			b++;
+		}
+		a++;
 	}
-	return (0);
+	return (NULL);
 }
 /*
 #include<stdio.h>
  int main()
  {
-	char go[] = "yahyamzil";
-	char gi[] = "yam";
+    char go[] = "yahyamzil";
+    char gi[] = "yam";
 printf("%s\n",ft_strnstr(go,gi,7));
 printf("%s",strnstr(go,gi,7));
 }

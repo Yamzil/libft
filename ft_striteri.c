@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 15:23:23 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/04 16:47:14 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/15 15:36:54 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/15 15:36:56 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	char		*ss;
-	size_t		i;
-
-	ss = (char *) s;
-	i = 0;
-	while (i < n)
-	{
-		if (ss[i] == (char) c)
-			return (&ss[i]);
-		i++;
-	}
-	return (NULL);
-}
 /*
-#include<stdio.h>
+void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+    int i;
+
+    i = 0;
+    while(s[i])
+    {
+        f(i,&s[i]);
+        i++;
+    }
+}
+
+#include <stdio.h>
+
+char *f(unsigned int i, char c)
+{
+    i = 0;
+	if (c >= 97 && c <= 122)
+		return (65 + c - 97);
+	else
+		return (&c);
+}
 int main()
 {
-	char go[]="yhaya";
-	int g='w';
-	printf("%s",ft_memchr(go,g,1));
+	char str1[] = "abc";
+	char* str2;
+	str2 = ft_striteri(str1, f);
+	printf("%s\n", str2);
 }
 */

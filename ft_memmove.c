@@ -19,26 +19,21 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 	const char	*src1;
 	size_t			i;
 
-
 	des1 = (char *) dst;
 	src1 = (const char *)src;
 	i = 0;
 	if (des1 == NULL && src1 == NULL)
-		return (0);
-	else if (src > dst) {
-		while (len)
-		{
-			des1[i] = src1[i];
-			i++;
-			len--;
-		}
+		return (NULL);
+	else if (src > dst) 
+	{
+		ft_memcpy(dst, src, len);
 	}
-	else{
+	else
+	{
 		i = len - 1;
-		while (len)
+		while (len--)
 		{
 			des1[i] = src1[i];
-			len--;
 			i--;	
 		}
 	}
@@ -48,9 +43,9 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 #include<stdio.h>
 int main()
 {
-	char go[6]="hello";
-	char gi[6]="hello";
-	//printf("%s\n",ft_memmove(go,gi,3));
-	memmove(go.gi,9);
+	char go[]="helloworld";
+	char gi[]="helloworld";
+	printf("%s\n",ft_memmove(&go[0],&go[4],3));
+	printf("%s\n",memmove(&gi[0],&gi[4],3));
 }
 */

@@ -28,8 +28,8 @@ void *ft_calloc(size_t count, size_t size)
 int main()
 {
     int i;
-    i = 6
-    char * pointer = (char *) calloc( go, sizeof(char));
-    printf("%s",ft_calloc(6))
+    i = 6;
+    char * pointer = (char *) calloc( 6, sizeof(char));
+    printf("%s",ft_calloc(6,sizeof(char)));
 }
 */

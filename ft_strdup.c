@@ -30,7 +30,6 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	temp [i] = '\0';
-	//free(temp);
 	return (temp);
 }
 /*
