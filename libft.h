@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <limits.h>
+
 
 void	ft_bzero(void *s, size_t n);
 int	ft_atoi(const char *str);
@@ -41,6 +43,7 @@ void    ft_putchar_fd(char c,int fd);
 char	*ft_strchr(const char *s, int c);
 void    ft_putdendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
+char    *ft_itoa(int n);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 int	ft_isalnum(int c);
@@ -52,4 +55,9 @@ char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s1, char const *set);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+};
 #endif

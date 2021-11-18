@@ -11,36 +11,52 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char    *ft_itoa(int n)
+static int countDigits(int d)
 {
-    int m;
-    int i;
-    //char go[10]="0123456789";
-    char *temp;
+	int res;
 
-    m = n;
-    i  = 0;
-    temp = (char *) malloc(n);
-    if (!temp)
-        return (NULL);
-    if (m < 0)
-    {
-        m *= -1;
-        i++;
-    }
-    else
-        m = m;
-    while (m > 9)
-    {
-        temp[i++] = m % 10 + 48;
-        temp[i++] = m / 10 + 48;
-    }
-    temp[i] = '\0';
-   return(temp);
+	res = 0;
+	if (d < 0)
+		res++;
+	while (d != 0 ) {
+	   d /= 10;
+	   res++;
+	}
+	return(res);
+}
+char	*ft_itoa(int n)
+{
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 0;
+	j = countDigits(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	temp = malloc((j + 1) * sizeof(char));
+	if (!temp)
+		return (NULL);
+	if (n < 0)
+	{
+		temp[0] = '-';
+		n *= -1;
+	}
+	temp[j--] = '\0';
+	while (n > 0)
+	{
+		temp[j--] = (n % 10) + 48;
+		n /= 10;
+	}
+	return (temp);
 }
 
+/*
 #include<stdio.h>
 int main()
 {
-    printf("%s",ft_itoa(5));
+	printf("%s",ft_itoa(10));
 }
+*/

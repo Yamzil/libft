@@ -49,6 +49,8 @@ SRC =	ft_atoi.c \
 		ft_toupper.c \
 		ft_strmapi.c \
 		ft_striteri.c \
+		ft_itoa.c \
+		ft_lstnew.c \
 		
 
 all :$(NAME) 

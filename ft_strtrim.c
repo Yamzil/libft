@@ -87,12 +87,10 @@ char *ft_strtrim(const char *s1, char const *set)
     temp[k] = '\0';
     return (temp);
 }
-/*
+
 #include<stdio.h>
 int main()
 {
-   char s1[]="CABCddBAABdCBA";
-   ft_strtrim(s1, "ABC");
-   printf("[%s]",ft_strtrim(s1, " ABC")); 
+   char s1[]="hhhhlhhlohlaaahhlhhlh";
+   printf("[%s]",ft_strtrim(s1, "lh")); 
 }
-*/

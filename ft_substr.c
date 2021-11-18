@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char *temp;
 
-	i = 0;
+	i = 0;//4
 	if(!s)
 		return NULL;
 	if (start >= ft_strlen(s))
@@ -33,10 +33,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (temp);	
 }
 
-
-// #include<stdio.h>
-// int main()
-// {
-// 	char go[] ="amzilyahya";
-// 	printf("%s",ft_substr(go,2,4));
-// }
+/*
+#include<stdio.h>
+ int main()
+ {
+	char go[] ="hello world";
+	printf("%s",ft_substr(go,20,20));
+}
+*/

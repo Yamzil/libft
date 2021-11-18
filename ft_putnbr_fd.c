@@ -12,22 +12,8 @@
 /*
 include "libft.h"
 
-void    ft_putchar_fd(char c,int fd)
-{
-    write(fd,&c,1);
-}
-
 void    ft_putnbr_fd(int n, int fd)
 {
-    if (n < 0)
-        ft_putchar_fd ('-');
-        n *= -1;
-        ft_putchar_fd(-n);
     
-    else if (n > 9)
-        ft_putnbr_fd(n / 10);
-        ft_putnbr_fd(n % 10);
-    else  
-        ft_putchar(n + 48);
 }
 */

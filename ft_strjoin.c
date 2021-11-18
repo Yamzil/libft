@@ -17,13 +17,13 @@ char    *ft_strjoin(char const *s1, char const *s2)
     int i;
     int n;
     char    *temp;
-    if (!s1 || !s2)
-        return (NULL);
     i = 0;
     n = 0;
-    temp =(char *)malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-    if (temp == NULL)
-        return (0);
+    if (!s1 || !s2)
+        return (NULL);
+    temp = malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+    if (!temp)
+        return (NULL);
     while  (s1[i])
         temp[n++] = s1[i++];
     i = 0;
@@ -33,12 +33,12 @@ char    *ft_strjoin(char const *s1, char const *s2)
     return(temp);
 }
 /*
-    #include<stdio.h>
-    int main()
-    {
-        char go[] = "Yahya";
-        char gi[] = "amzil";
+#include<stdio.h>
+int main()
+{
+    char go[] = "Yahya";
+    char gi[] = "amzil";
 
-        printf("%s",ft_strjoin(go,gi));
+    printf("%s",ft_strjoin(go,gi));
     }
 */

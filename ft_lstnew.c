@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 15:35:23 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/03 15:40:07 by yamzil           ###   ########.fr       */
+/*   Created: 2021/11/18 03:28:30 by yamzil            #+#    #+#             */
+/*   Updated: 2021/11/18 03:28:32 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+t_list *ft_lstnew(void *content)
 {
-	if (c >= 32 && c < 127)
-		return (1);
-	else
-		return (0);
+    t_list *temp;
+
+    struct *temp = (struct node *)malloc(sizeof(t_list))
+    temp -> content = content; // temp.data = 2;
+    //(*temp) -> next = (*content);
+    //(*content) = temp;
+return(temp);
 }

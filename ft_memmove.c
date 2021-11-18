@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
 #include "libft.h"
 
 void    *ft_memmove(void *dst, const void *src, size_t len)
@@ -22,7 +21,7 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 	des1 = (char *) dst;
 	src1 = (const char *)src;
 	i = 0;
-	if (des1 == NULL && src1 == NULL)
+	if (!des1 && !src1)
 		return (NULL);
 	else if (src > dst) 
 	{
@@ -30,11 +29,9 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = len - 1;
 		while (len--)
 		{
-			des1[i] = src1[i];
-			i--;	
+			des1[len] = src1[len];	
 		}
 	}
 		return (des1);
