@@ -12,59 +12,64 @@
 
 
 NAME = libft.a
+sources = ft_atoi.c\
+		 ft_isalpha.c\
+		 ft_isalpha.c\
+		 ft_isalpha.c\
+		 ft_itoa.c\
+		 ft_itoa.c\
+		 ft_itoa.c\
+		 ft_memmove.c\
+		 ft_memmove.c\
+		 ft_memmove.c\
+		 ft_putnbr_fd.c\
+		 ft_putnbr_fd.c\
+		 ft_putnbr_fd.c\
+		 ft_strdup.c\
+		 ft_strlcpy.c\
+		 ft_strnstr.c\
+		 ft_tolower.c\
+		 ft_bzero.c\
+		 ft_isascii.c\
+		 ft_memchr.c\
+		 ft_memset.c\
+		 ft_putstr_fd.c\
+		 ft_striteri.c\
+		 ft_strlen.c\
+		 ft_strrchr.c\
+		 ft_toupper.c\
+		 ft_calloc.c\
+		 ft_isdigit.c\
+		 ft_memcmp.c\
+		 ft_putchar_fd.c\
+		 ft_split.c\
+		 ft_strjoin.c\
+		 ft_strmapi.c\
+		 ft_strtrim.c\
+		 ft_isalnum.c\
+		 ft_isprint.c\
+		 ft_memcpy.c\
+		 ft_putendl_fd.c\
+		 ft_strchr.c\
+		 ft_strlcat.c\
+		 ft_strncmp.c\
+		 ft_substr.c\
+		 
+bonussources =	ft_lstnew.c\
+				ft_lstadd_front.c\
+				ft_lstsize.c\
+				
+CFLAGS = -Wall -Werror -Wextra
+object = $(sources:.c=.o)
+bonusobject = $(bonussources:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
-
-INC = libft.h
-
-SRC =	ft_atoi.c \
-		ft_bzero.c \
-		ft_calloc.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_isprint.c \
-		ft_memchr.c \
-		ft_memcmp.c \
-		ft_memcpy.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_putchar_fd.c \
-		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-		ft_putstr_fd.c \
-		ft_strchr.c \
-		ft_strdup.c \
-		ft_strjoin.c \
-		ft_strlcat.c \
-		ft_strlcpy.c \
-		ft_strlen.c \
-		ft_strncmp.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strtrim.c \
-		ft_substr.c \
-		ft_tolower.c \
-		ft_toupper.c \
-		ft_strmapi.c \
-		ft_striteri.c \
-		ft_itoa.c \
-		ft_lstnew.c \
-		
-
-all :$(NAME) 
-
-OBJ = $(SRC:.c=.o) 
-
-$(NAME) :
-	gcc $(CFLAGS) -c $(SRC) -I $(INC)
-	ar rc $(NAME) $(OBJ)
-
-clean :
-	rm -rf $(OBJ)
-
-fclean : clean
-	@rm -f $(NAME)
-
-re : fclean all
+all: $(NAME)
+$(NAME): $(sources:.c=.o)
+	@ar -rc $(NAME) $(object)
+bonus: $(object) $(bonusobject)
+	@ar -rc $(NAME) $(object) $(bonusobject)
+clean:
+	rm -f $(object) $(bonusobject)
+fclean: clean
+	rm -f $(NAME)
+re: fclean all

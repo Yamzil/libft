@@ -13,11 +13,8 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#include <limits.h>
-
 
 void	ft_bzero(void *s, size_t n);
 int	ft_atoi(const char *str);
@@ -55,9 +52,11 @@ char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s1, char const *set);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
-typedef struct s_list
-{
+typedef struct s_list{
     void *content;
     struct s_list *next;
-};
+} t_list;
+void ft_lstadd_front(t_list **lst, t_list *new);
+t_list *ft_lstnew(void *content);
+int ft_lstsize(t_list *lst);
 #endif

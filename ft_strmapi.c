@@ -32,7 +32,7 @@ char *ft_strmapi(char const *s,char (*f)(unsigned int , char))
     temp[i] = '\0';
     return(temp);
 }
-/*
+
 #include <stdio.h>
 
 char f(unsigned int i, char c)
@@ -50,4 +50,3 @@ int main()
 	str2 = ft_strmapi(str1, *f);
 	printf("%s\n", str2);
 }
-*/

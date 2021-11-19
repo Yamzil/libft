@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_strfind(char *str, char c)
+static int ft_strfind(char *str, char c)
 {
     int i = 0;
     while (str[i])
@@ -24,7 +24,7 @@ int ft_strfind(char *str, char c)
     return (0);
 }
 
-int check_set_begin(char *str, char *s)
+static int check_set_begin(char *str, char *s)
 {
     int i;
 
@@ -39,7 +39,7 @@ int check_set_begin(char *str, char *s)
     return (i);
 }
 
-int check_set_end( char *str, char *s)
+static int check_set_end( char *str, char *s)
 {
     int i;
 
@@ -68,7 +68,7 @@ char *ft_strtrim(const char *s1, char const *set)
         return(NULL);
     s11 = (char *)s1;
     i = (check_set_begin((char *)set, (char *)s1));
-    j = (check_set_end((char *)set, (char *)s1))+1;
+    j = (check_set_end((char *)set, (char *)s1)) + 1;
     if (!i && !j)
         return (ft_strdup(s1));
     if (j - i <= 0)
@@ -87,10 +87,11 @@ char *ft_strtrim(const char *s1, char const *set)
     temp[k] = '\0';
     return (temp);
 }
-
+/*
 #include<stdio.h>
 int main()
 {
    char s1[]="hhhhlhhlohlaaahhlhhlh";
    printf("[%s]",ft_strtrim(s1, "lh")); 
 }
+*/
