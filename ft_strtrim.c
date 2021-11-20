@@ -6,86 +6,26 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:13:16 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/11 21:13:18 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/20 05:03:44 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_strfind(char *str, char c)
+char	*ft_strtrim(const char *s1, char const *set)
 {
-    int i = 0;
-    while (str[i])
-    {
-        if (str[i] == c)
-            return (1);
-        i++;
-    }
-    return (0);
-}
+	int	i;
+	int	j;
 
-static int check_set_begin(char *str, char *s)
-{
-    int i;
-
-    i = 0;
-    while (s[i])
-    {
-        if (ft_strfind(str, s[i]))
-            i++;
-        else
-            return (i);
-    }
-    return (i);
-}
-
-static int check_set_end( char *str, char *s)
-{
-    int i;
-
-    i = ft_strlen(s) - 1;
-    while (i > 0)
-    {
-        if (ft_strfind(str, s[i]))
-            i--;
-        else
-            return (i);
-    }
-    return (i);
-}
-
-char *ft_strtrim(const char *s1, char const *set)
-{
-    int i;
-    int j;
-    char *temp;
-    char *s11;
-    int k;
-
-    k = 0;
-    i = 0;
-    if (!s1)
-        return(NULL);
-    s11 = (char *)s1;
-    i = (check_set_begin((char *)set, (char *)s1));
-    j = (check_set_end((char *)set, (char *)s1)) + 1;
-    if (!i && !j)
-        return (ft_strdup(s1));
-    if (j - i <= 0)
-    {
-        return (ft_strdup(""));
-    }
-    temp = malloc(sizeof(char) * (j - i + 1));
-    if(!temp)
-        return (NULL);
-    while (i < j)
-    {
-        temp[k] = s11[i];
-        i++;
-        k++;
-    }
-    temp[k] = '\0';
-    return (temp);
+	i = 0;
+	if (!s1)
+		return (NULL);
+	while (*s1 && ft_strchr(set, s1[i]))
+		s1++;
+	j = ft_strlen(s1);
+	while (j && ft_strchr(set, s1[j]))
+		j--;
+	return (ft_substr(s1, 0, j + 1));
 }
 /*
 #include<stdio.h>

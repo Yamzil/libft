@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:03:43 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/06 11:39:54 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/19 23:34:04 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ss;
-	int i;
+	int				i;
 
 	ss = (unsigned char *) s;
 	i = 0;

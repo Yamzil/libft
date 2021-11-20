@@ -57,7 +57,6 @@ sources = ft_atoi.c\
 		 
 bonussources =	ft_lstnew.c\
 				ft_lstadd_front.c\
-				ft_lstsize.c\
 				
 CFLAGS = -Wall -Werror -Wextra
 object = $(sources:.c=.o)

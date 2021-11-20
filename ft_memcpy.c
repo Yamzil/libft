@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:51:20 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/07 14:55:00 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/19 23:57:11 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char		*des1;
 	const char	*src1;
-	size_t			i;
+	size_t		i;
 
 	des1 = (char *) dest;
 	src1 = (const char *)src;

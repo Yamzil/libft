@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 21:10:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/05 11:42:45 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/20 01:56:08 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	cc;
 	char	*ss;
 
 	i = 0;
-	ss = (char*) s;
-	while (ss[i] != c && ss[i])
+	ss = (char *) s;
+	cc = (char) c;
+	while (ss[i] != cc && ss[i])
 		i++;
-	if (ss[i] ==  c)
+	if (ss[i] == cc)
 		return (&ss[i]);
-	else 
+	else
 		return (NULL);
 }
 /*
@@ -37,4 +39,3 @@ int main()
     printf("%s",strchr(go,c));
 }
 */
-

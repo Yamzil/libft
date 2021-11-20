@@ -6,26 +6,26 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:36:54 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/15 15:36:56 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/20 02:14:41 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 {
-    int i;
+	int	i;
 
-    i = -1;
-    if (!s)
-        return((void)0);
-    while(s[++i])
-    {
-        f(i,&s[i]);
-    }
+	i = -1;
+	if (!s)
+		return ((void) 0);
+	while (s[++i])
+	{
+		f (i, &s[i]);
+	}
 }
 /*
 #include <stdio.h>
 int main()
 {
-
+    
 }
 */
