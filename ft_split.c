@@ -6,21 +6,25 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:03:50 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 01:53:53 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:46:48 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_thewords(const char *str, char c)
+int	count_thewords(const char *str, char c)
 {
-	int	count;
+	int		i;
+	int		count;
 
+	i = 0;
 	count = 0;
-	--str;
-	while (*(++str))
-		if ((*(str + 1) == c || !*(str + 1)) && *str != c)
+	while (str[i])
+	{
+		if (str[i] != c && (str[i + 1] == c || str[i + 1] == '\0'))
 			count++;
+		i++;
+	}
 	return (count);
 }
 
@@ -35,7 +39,7 @@ static char	**free_temp(char **ss)
 		i++;
 	}
 	free (ss);
-	return (ss);
+	return (NULL);
 }
 
 static int	count_charr(const char *s, char c)
@@ -44,9 +48,7 @@ static int	count_charr(const char *s, char c)
 
 	i = 0;
 	while (s[i] && s[i] != c)
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -58,27 +60,22 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	temp = (char **) malloc ((count_thewords(s, c) + 1) * sizeof (char *));
+	temp = malloc ((count_thewords(s, c) + 1) * sizeof (char *));
 	if (!temp)
 		return (NULL);
 	while (*s)
 	{
-		while (s[0] == c && *s)
+		while (*s == c)
 			s++;
 		if (*s != c && *s)
 		{
-			temp[i++] = ft_substr(s, 0, count_charr(s, c));
+			temp[i] = ft_substr(s, 0, count_charr(s, c));
+			if (!temp[i])
+				return (free_temp(temp));
 			s += count_charr(s, c);
+			i++;
 		}
-		if (!temp[i - 1])
-			return (free_temp(temp));
 	}
 	temp[i] = NULL;
 	return (temp);
 }
-/*
-int main()
-{
-	char **t = ft_split(NULL,0);
-}
-*/

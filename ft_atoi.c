@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:03:57 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/19 23:30:45 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:41:19 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ int	ft_atoi(const char *str)
 	}
 	return (base * sign);
 }
-/*
-#include<stdio.h>
-int main()
-{
-    printf("%d\n",ft_atoi("  -1234a  b567"));
-    printf("%d",atoi("  -1234a  b567"));
-}
-*/

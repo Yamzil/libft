@@ -14,17 +14,17 @@
 
 static int	countdigits(int d)
 {
-	int	res;
+	int	i;
 
-	res = 0;
+	i = 0;
 	if (d < 0)
-		res++;
+		i++;
 	while (d != 0)
 	{
 		d /= 10;
-		res++;
+		i++;
 	}
-	return (res);
+	return (i);
 }
 
 char	*ft_itoa(int n)
@@ -55,10 +55,3 @@ char	*ft_itoa(int n)
 	}
 	return (temp);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	printf("%s",ft_itoa(12));
-}
-*/

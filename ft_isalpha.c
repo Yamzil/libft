@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:52:06 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/19 23:39:31 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/22 21:51:16 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	int c = '5';
-	printf("%d",ft_isalpha(c));
-}
-*/

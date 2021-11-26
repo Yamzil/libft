@@ -6,11 +6,10 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:37:59 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 02:20:57 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:06:09 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -22,12 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	char go[] = "yamzil";
-	printf("%zu\n",ft_strlen(go));
-	printf("%zu",strlen(go));
-}
-*/

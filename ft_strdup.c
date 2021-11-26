@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
@@ -22,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	j = ft_strlen(s1);
 	temp = malloc((j + 1) * sizeof (char));
-	if (temp == NULL)
+	if (!temp)
 		return (0);
 	while (s1[i])
 	{
@@ -32,12 +31,3 @@ char	*ft_strdup(const char *s1)
 	temp [i] = '\0';
 	return (temp);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char go[]="yahya";
-	printf("%s\n",ft_strdup(go));
-	printf("%s",strdup(go));
-}
-*/

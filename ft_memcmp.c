@@ -6,11 +6,11 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:53:15 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 00:00:32 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/22 21:53:24 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -31,11 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// #include<stdio.h>
-// int main()
-// {
-// 	char go[]="yahya";
-// 	char gi[]="amw";
-// 	printf("%d\n",ft_memcmp(go,gi,0));
-// 	printf("%d",memcmp(go,gi,0));
-// }

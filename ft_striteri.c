@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:36:54 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 02:14:41 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:05:23 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,3 @@ void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 		f (i, &s[i]);
 	}
 }
-/*
-#include <stdio.h>
-int main()
-{
-    
-}
-*/

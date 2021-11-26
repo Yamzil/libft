@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 19:49:09 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 02:49:00 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:07:07 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	temp[i] = '\0';
 	return (temp);
 }
-
-/*
-#include<stdio.h>
- int main()
- {
-	char go[] ="hello world";
-	printf("%s",ft_substr(go,3,5));
-}
-*/

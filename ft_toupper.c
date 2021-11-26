@@ -17,13 +17,3 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	int c;
-	c = 'a';
-
-	printf("%d",ft_toupper(c));
-}
-*/

@@ -30,14 +30,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dstsize + lensrc);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	char go[]="yahya";
-	char gi[]="amz";
-	printf("%zu\n",ft_strlcat(go,gi,2));
-	printf("%zu",strlcat(go,gi,2));
-}
-*/

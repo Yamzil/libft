@@ -28,13 +28,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char go[] = "mohammed";
-    char c = 'm';
-    printf("%s\n",strrchr(go,c));
-    printf("%s",ft_strrchr(go,c));
-}
-*/

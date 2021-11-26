@@ -33,13 +33,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	temp[n] = '\0';
 	return (temp);
 }
-/*
-#include<stdio.h>
-int main()
-{
-    char go[] = "Yahya";
-    char gi[] = "amzil";
-
-    printf("%s",ft_strjoin(go,gi));
-    }
-*/

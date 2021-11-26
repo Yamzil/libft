@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:23:23 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/19 23:55:33 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:59:51 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	char go[]="yhaya";
-	int g='w';
-	printf("%s",ft_memchr(go,g,1));
-}
-*/

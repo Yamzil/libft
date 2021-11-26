@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:26:07 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 02:26:16 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:06:24 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,3 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 	temp[i] = '\0';
 	return (temp);
 }
-
-#include <stdio.h>
-
-char f(unsigned int i, char c)
-{
-    i = 0;
-	if (c >= 97 && c <= 122)
-		return (65 + c - 97);
-	else
-		return (c);
-}
-int main()
-{
-	char str1[] = "abc";
-	char* str2;
-	str2 = ft_strmapi(str1, *f);
-	printf("%s\n", str2);
-}
-

@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:43:33 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 02:36:51 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:06:46 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,22 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	a;
-	size_t	b;
+	size_t	i;
+	size_t	j;
 
-	a = 0;
-	b = 0;
-	if (needle[b] == '\0')
+	i = 0;
+	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while (haystack[a] != '\0')
+	while (haystack[i])
 	{
-		b = 0;
-		while (haystack[a + b] == needle[b] && a + b < len)
+		j = 0;
+		while (haystack[i + j] == needle[j] && i + j < len)
 		{
-			if (needle[b + 1] == '\0')
-				return ((char *)haystack + a);
-			b++;
+			if (needle[j + 1] == '\0')
+				return ((char *)&haystack[i]);
+			j++;
 		}
-		a++;
+		i++;
 	}
 	return (NULL);
 }
-/*
-#include<stdio.h>
- int main()
- {
-    char go[] = "yahyamzil";
-    char gi[] = "yam";
-printf("%s\n",ft_strnstr(go,gi,7));
-printf("%s",strnstr(go,gi,7));
-}
-*/

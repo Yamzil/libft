@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:57:08 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/20 00:06:50 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:00:58 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*src1;
 	size_t		i;
 
-	des1 = (char *) dst;
 	src1 = (const char *)src;
+	des1 = (char *) dst;
 	i = 0;
 	if (!des1 && !src1)
 		return (NULL);
@@ -36,13 +36,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (des1);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	char go[]="helloworld";
-	char gi[]="helloworld";
-	printf("%s\n",ft_memmove(&go[0],&go[4],3));
-	printf("%s\n",memmove(&gi[0],&gi[4],3));
-}
-*/

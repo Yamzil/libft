@@ -6,11 +6,10 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:51:20 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/19 23:57:11 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:00:27 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -32,13 +31,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (des1);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	char go[]="yahya";
-	char gi[]="amz";
-	printf("%s\n",ft_memcpy(go,gi,3));
-	printf("%s",memcpy(go,gi,3));
-}
-*/
