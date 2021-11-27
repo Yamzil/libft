@@ -6,7 +6,7 @@
 /*   By: yamzil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:13:16 by yamzil            #+#    #+#             */
-/*   Updated: 2021/11/26 22:56:02 by yamzil           ###   ########.fr       */
+/*   Updated: 2021/11/27 00:35:39 by yamzil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		k;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	i = 0;
 	j = (checkend(s1, set) + 1);
 	k = checkbegin(s1, set);
-	if (!s1)
-		return (NULL);
 	if ((j - k) <= 0)
 		return (ft_strdup (""));
 	temp = (char *) malloc((j - k + 1) * sizeof (char));
